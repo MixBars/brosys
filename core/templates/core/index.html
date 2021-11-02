@@ -1,0 +1,19 @@
+{% extends 'core\base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block tittle %}
+{{ title }}
+{% endblock %}
+
+
+
+{% block all_other_content %}
+<h1>Log in, please!</h1>
+        <br></br>
+        <p class="lead">
+            <a href="{% provider_login_url "facebook" method = "js_sdk"%}" class="btn btn-lg btn-secondary fw-bold border-white bg-blue">Facebook</a>
+            <a href="{% provider_login_url "google" %}" class="btn btn-lg btn-secondary fw-bold border-white bg-blue">Google</a>
+            <a href="{% provider_login_url "vk" %}" class="btn btn-lg btn-secondary fw-bold border-white bg-blue">VK</a>
+        </p>
+{% endblock %}

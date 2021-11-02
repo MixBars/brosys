@@ -1,0 +1,35 @@
+{% extends 'core\base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block tittle %}
+{{ title }}
+{% endblock %}
+
+{% block top_content %}
+
+<a class="nav-link active" aria-current="page" href="accounts/logout">Log out</a>
+{% endblock %}
+
+{% block all_other_content %}
+<br></br>
+<h1>Welcome, {{ user }}</h1>
+<p class="lead">
+    {% for el in lastmsg %}
+    <a class="nav-link" aria-current="page" href="app"><b>"{{ el.msg }}"</b> sent by {{ el.username }} at {{ el.timestamp }}</a>
+
+    {% endfor %}
+</p>
+<p class="lead">
+
+<form method="POST">
+    {% csrf_token %}
+    <input class="btn btn-lg btn-secondary fw-bold border-white bg-blue" type="submit" value="Bro!" name='msg'>
+    <input class="btn btn-lg btn-secondary fw-bold border-white bg-blue" type="submit" value="Sis!" name='msg'>
+
+
+</form>
+
+
+</p>
+{% endblock %}
