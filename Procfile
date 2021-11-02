@@ -1,0 +1,1 @@
+web: gnicorn brosys.wsgi --log-file -
