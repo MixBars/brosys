@@ -1,1 +1,1 @@
-web: gnicorn brosys.wsgi --log-file -
+web: gunicorn brosys.wsgi --log-file -
